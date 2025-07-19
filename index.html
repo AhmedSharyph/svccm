@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SHAH Vaccine Cold Chain Monitoring (SVCM)</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>SHAH Vaccine Cold Chain Monitoring (SVCM)</h1>
+        <p>Temperature Recording Form (PWA Demo)</p>
+        
+        <form id="tempForm">
+            <label for="date_time">Date & Time:</label>
+            <input type="datetime-local" id="date_time" name="date_time" required />
+
+            <label for="session">Session:</label>
+            <select id="session" name="session" required>
+                <option value="">-- Select Session --</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
+
+            <fieldset>
+                <legend>Vestfrost MF114</legend>
+                <label>Electricity Status:</label>
+                <select name="mf114_electricity_status" required>
+                    <option value="">Select an option</option>
+                    <option value="running">Running</option>
+                    <option value="not running">Not Running</option>
+                </select>
+                <label>Temperature:</label>
+                <input type="number" step="0.1" name="mf114_temp" required />
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p><small>This is a PWA demo. Offline caching enabled.</small></p>
+    </div>
+</body>
+</html>
